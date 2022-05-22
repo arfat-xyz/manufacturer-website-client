@@ -1,0 +1,43 @@
+[
+    {
+        "name" : "Loudspeaker ",
+        "img" :"https://sc04.alicdn.com/kf/Hb5e3133730f94695b9b0bc58a778d54f0.jpg",
+        "desc" :"Size:17*12*4.0mm,Impedance:8 ohm,Weight:1.1g,Brand Name:RB, Type:Passive",
+        "available": 2000
+    },{
+        "name" : "Charging Port ",
+        "img" :"https://sc04.alicdn.com/kf/HTB1ifrYXV67gK0jSZPfq6yhhFXaq.jpg",
+        "desc" :"Selling Units:Single item,Single package size: 12X0.5X8 cm,Single gross weight:0.005 kg,Package Type:OPP Bag+Nylon Platic Bag+ Label",
+        "available": 2000
+    },{
+        "name" : "Charging port flex",
+        "img" :"https://m.media-amazon.com/images/I/61BcZBA0cwL._AC_SL1200_.jpg",
+        "desc" :"【Brand new OEM original quality】100% perfect fit replacement charging port USB dock flex cable with microphone and signal antenna for iPhone 8 Plus 5.5''. Tested one by one by professional technicist before shipping. It will not cause your phone reboot loop.",
+        "available": 2000
+    },{
+        "name" : "Font camera sensor",
+        "img" :"https://m.media-amazon.com/images/I/51fe4nUwaOL._AC_SL1000_.jpg",
+        "desc" :"High quality OEM Front Camera cable replacement with light sensor and proximity sensor for iPhone 7P 5.5 inch。Best choice to replace if your iPhone front camera is defective.We have been tested well one by one before shipping.",
+        "available": 2000
+    },{
+        "name" : "Earpice speaker",
+        "img" :"https://m.media-amazon.com/images/I/51BiOap7EzL._AC_SL1000_.jpg",
+        "desc" :"Brand New Earpiece Ear Speaker Replacement Compatible with Samsung Galaxy Note 8 N950F N950U N9500 Professional technician is needed for installation. We won't responsible for any damage due to improper operation",
+        "available": 2000
+    },{
+        "name" : "sim tray",
+        "img" :"https://m.media-amazon.com/images/I/31e5SGvCaTL._AC_.jpg",
+        "desc" :"Replacement black color single sim card & micro SD card holder slot tray socket for Samsung Galaxy S9 G960 and S9+ Plus G965 smartphone. Brand new. High quality repair replacement parts. Midnight black color.",
+        "available": 2000
+    },{
+        "name" : "rear camera",
+        "img" :"https://m.media-amazon.com/images/I/612Zs+FAOtL._AC_SL1100_.jpg",
+        "desc" :"New replacement parts for Oppo mobile phone. Help you replace your broken or unworkable one. We recommend you ask professional person to help install it to avoid any personal reason damages. Quality is guaranteed, good price.",
+        "available": 2000
+    },{
+        "name" : "switch on/off flex",
+        "img" :"https://m.media-amazon.com/images/I/31sSyeAHtLL.jpg",
+        "desc" :"GRADE A QUALITY REPLACEMENT PARTS THIS ITEM IS 100% COMPATIBLE YOUR DEVICE GURANTED FIITED AND WORKING PARTS MADE IN CHINA MANUFACTURED BY THIRD PARTY GRADE A QUALITY 'MOBILE MENIA' BRAND",
+        "available": 2000
+    }
+]

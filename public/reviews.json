@@ -1,0 +1,29 @@
+[
+
+    {
+        "name" : "Alcisiaste",
+        "product": "Charging Port",
+        "star" : 4,
+        "comment" :"Charging super great as original one. I am really happy with this product it really works.  Phone is alive again, and their customer service was great."
+    }, {
+        "name" : "Andrew",
+        "product": "Charging Port",
+        "star" : 5,
+        "comment" :"Fit in perfectly. No issues and it’s been over 4 months"
+    }, {
+        "name" : "Don Karlion",
+        "product": "Charging Port",
+        "star" : 2,
+        "comment" :"Worked for 2.5 months, now I got to change the phone"
+    },{
+        "name" : "CharityW",
+        "product": "Charging Port Flex",
+        "star" : 5,
+        "comment" :"Works great. I initially had difficulty installing but was able to properly install it."
+    },{
+        "name" : "lorna young",
+        "product": "Sim Tray",
+        "star" : 5,
+        "comment" :"I thought it couldn't fit,it did fit,so happy with this!"
+    }
+]
