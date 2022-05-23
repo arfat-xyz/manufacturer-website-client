@@ -17,7 +17,7 @@ const HomeReviewsCard = ({ review }) => {
   return (
     <div class="card bg-base-100 shadow-xl">
       <div class="card-body">
-        <h2 class="card-title">Product Name : {product}</h2>
+        <h2 class="card-title text-primary">Product Name : {product}</h2>
         <p>Customer Name : {name}</p>
         <p>{comment}</p>
         <div className="flex">
