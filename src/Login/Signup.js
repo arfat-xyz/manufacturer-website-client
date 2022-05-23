@@ -7,14 +7,18 @@ import {
 import auth from "../firebase.init";
 import { async } from "@firebase/util";
 import Loading from "../Shared/Loading";
+import { useLocation, useNavigate } from "react-router-dom";
+import useToken from "../Hooks/useToken";
 const Signup = () => {
-  const [createUserWithEmailAndPassword, loading] =
+  const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
+  const [createUserWithEmailAndPassword, user, loading] =
     useCreateUserWithEmailAndPassword(auth);
   const [updateProfile, updating] = useUpdateProfile(auth);
   const {
     register,
     handleSubmit,
-    watch,
     reset,
     formState: { errors },
   } = useForm();
@@ -26,9 +30,11 @@ const Signup = () => {
     await updateProfile({ displayName: name });
     reset();
   };
+  const [token] = useToken(user);
   if (loading || updating) {
     return <Loading />;
   }
+  token && navigate(from, { replace: true });
   return (
     <div className="grid justify-center items-center h-screen w-screen">
       <div className="shadow-lg w-96">

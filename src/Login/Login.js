@@ -2,20 +2,23 @@ import { async } from "@firebase/util";
 import React from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import auth from "../firebase.init";
+import useToken from "../Hooks/useToken";
 import Loading from "../Shared/Loading";
 import ForgetPassword from "./ForgetPassword";
 import SocialLogin from "./SocialLogin";
 
 const Login = () => {
   const navigate = useNavigate();
+  const location = useLocation();
+  const from = location?.state?.from?.pathname || "/";
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
+  const [token] = useToken(user);
   const {
     register,
     handleSubmit,
-    reset,
     formState: { errors },
   } = useForm();
   const onSubmit = async (e) => {
@@ -26,7 +29,7 @@ const Login = () => {
   if (loading) {
     return <Loading />;
   }
-  user && navigate("/");
+  token && navigate(from, { replace: true });
 
   return (
     <div className="grid justify-center items-center h-screen w-screen">
