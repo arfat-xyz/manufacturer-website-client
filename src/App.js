@@ -10,6 +10,12 @@ import Footer from "./Shared/Footer";
 import Header from "./Shared/Header";
 import NotFound from "./Shared/NotFound";
 import "react-toastify/dist/ReactToastify.css";
+import MyOrder from "./Dashboard/MyOrder";
+import AddAReview from "./Dashboard/AddAReview";
+import MyProfile from "./Dashboard/MyProfile";
+import ManageAllOrders from "./Dashboard/ManageAllOrders";
+import AddAProduct from "./Dashboard/AddAProduct";
+import ManageProducts from "./Dashboard/ManageProducts";
 function App() {
   return (
     <div>
@@ -19,7 +25,14 @@ function App() {
         <Route path="/home" element={<Home />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<Signup />}></Route>
-        <Route path="/dashboard" element={<Dashboard />}></Route>
+        <Route path="/dashboard" element={<Dashboard />}>
+          <Route path="myorder" element={<MyOrder />} />
+          <Route path="addareview" element={<AddAReview />} />
+          <Route path="myprofile" element={<MyProfile />} />
+          <Route path="manageallorders" element={<ManageAllOrders />} />
+          <Route path="addaproduct" element={<AddAProduct />} />
+          <Route path="manageproducts" element={<ManageProducts />} />
+        </Route>
         <Route path="/blog" element={<Blog />}></Route>
         <Route path="/myportfolio" element={<MyPortfolio />}></Route>
         <Route path="*" element={<NotFound />}></Route>
