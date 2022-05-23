@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { useQuery } from "react-query";
 
 const useToken = (user) => {
   const [token, setToken] = useState("");
