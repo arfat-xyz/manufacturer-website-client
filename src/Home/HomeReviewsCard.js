@@ -1,7 +1,6 @@
 import React from "react";
 
 const HomeReviewsCard = ({ review }) => {
-  console.log(review);
   const { _id, name, product, comment, star } = review;
   const stars = [];
   for (var i = 0; i < star; i++) {
@@ -13,7 +12,6 @@ const HomeReviewsCard = ({ review }) => {
       />
     );
   }
-  console.log(stars);
   return (
     <div class="card bg-base-100 shadow-xl">
       <div class="card-body">

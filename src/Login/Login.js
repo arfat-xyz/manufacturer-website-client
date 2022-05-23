@@ -2,12 +2,15 @@ import { async } from "@firebase/util";
 import React from "react";
 import { useSignInWithEmailAndPassword } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router-dom";
 import auth from "../firebase.init";
 import Loading from "../Shared/Loading";
 import ForgetPassword from "./ForgetPassword";
+import SocialLogin from "./SocialLogin";
 
 const Login = () => {
-  const [signInWithEmailAndPassword, loading, error] =
+  const navigate = useNavigate();
+  const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
   const {
     register,
@@ -23,9 +26,11 @@ const Login = () => {
   if (loading) {
     return <Loading />;
   }
+  user && navigate("/");
+
   return (
     <div className="grid justify-center items-center h-screen w-screen">
-      <div className="shadow-lg w-96 rounded-lg">
+      <div className="shadow-lg w-96 rounded-lg p-5">
         <form onSubmit={handleSubmit(onSubmit)} className=" m-8">
           <div class="form-control ">
             <label class="label">
@@ -93,6 +98,12 @@ const Login = () => {
             </label>
           </div>
           <div>
+            New here ?
+            <Link className="text-primary" to={"/signup"}>
+              Sign up
+            </Link>
+          </div>
+          <div>
             {error && (
               <span className="text-red-500">
                 Something is wrong please check your email and password
@@ -109,6 +120,7 @@ const Login = () => {
             </div>
           </div>
         </form>
+        <SocialLogin />
       </div>
       <ForgetPassword />
     </div>

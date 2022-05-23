@@ -1,7 +1,15 @@
 import React from "react";
+import { signOut } from "firebase/auth";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link } from "react-router-dom";
+import Loading from "./Loading";
+import auth from "../firebase.init";
 
 const Header = () => {
+  const [user, loading] = useAuthState(auth);
+  if (loading) {
+    return <Loading />;
+  }
   const navBar = (
     <>
       <li>
@@ -16,9 +24,17 @@ const Header = () => {
       <li>
         <Link to="/myportfolio">My Portfolio</Link>
       </li>
-      <li>
-        <Link to="/login">Login</Link>
-      </li>
+      {user ? (
+        <li>
+          <Link to="/" onClick={() => signOut(auth)}>
+            Sign Out
+          </Link>
+        </li>
+      ) : (
+        <li>
+          <Link to="/login">Login</Link>
+        </li>
+      )}
     </>
   );
   return (

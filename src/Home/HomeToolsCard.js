@@ -12,7 +12,7 @@ const HomeToolsCard = ({ tool }) => {
         <p>{desc}</p>
         <p>Available : {available}</p>
         <div class="card-actions justify-center">
-          <button class="btn btn-primary">Buy Now</button>
+          <button class="btn btn-primary text-white">Buy Now</button>
         </div>
       </div>
     </div>
