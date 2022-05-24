@@ -2,14 +2,24 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import auth from "../firebase.init";
 import Loading from "../Shared/Loading";
 
 const Purchase = () => {
+  const navigate = useNavigate();
   const params = useParams();
   const id = params.id;
   const [user, loading] = useAuthState(auth);
+  /* const extra = {
+    method: "GET",
+    headers: {
+      "Content-Type": "application/json",
+      auth: `bearer ${localStorage.getItem("accessToken")}`,
+    },
+    body: { email },
+  }; */
   const { isLoading, data } = useQuery("purchase", () =>
     fetch(`http://localhost:5000/purchase/${id}`).then((res) => res.json())
   );
@@ -20,11 +30,25 @@ const Purchase = () => {
   } = useForm({
     defaultValues: { quantity: 50 },
   });
-  const onSubmit = (data) => {
-    console.log(data);
+  const onSubmit = (e) => {
+    const requestOptions = {
+      method: "PUT",
+      headers: {
+        "Content-Type": "application/json",
+        auth: `bearer ${localStorage.getItem("accessToken")}`,
+      },
+      body: JSON.stringify(e),
+    };
+    fetch(`http://localhost:5000/purchase/${id}`, requestOptions)
+      .then((response) => response.json())
+      .then((data) => {
+        if (data?.quantityUpdateResult?.modifiedCount > 0) {
+          toast.success("Congress you buy a product");
+          navigate("/dashboard/myorder");
+        }
+      });
   };
   const { displayName, email } = user;
-  // const { available, minimum } = data?.tool;
 
   if (loading || isLoading) {
     return <Loading />;
