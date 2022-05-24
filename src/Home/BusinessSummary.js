@@ -12,9 +12,6 @@ const BusinessSummary = () => {
   const containerProps = {
     "aria-busy": loading,
   };
-  {
-    /*  */
-  }
   return (
     <div>
       <div className="text-2xl md:text-5xl uppercase text-primary font-bold text-center my-10">

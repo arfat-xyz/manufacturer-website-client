@@ -42,6 +42,7 @@ const Purchase = () => {
     fetch(`http://localhost:5000/purchase/${id}`, requestOptions)
       .then((response) => response.json())
       .then((data) => {
+        console.log(data);
         if (data?.quantityUpdateResult?.modifiedCount > 0) {
           toast.success("Congress you buy a product");
           navigate("/dashboard/myorder");

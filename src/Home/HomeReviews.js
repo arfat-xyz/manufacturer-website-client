@@ -16,7 +16,7 @@ const HomeReviews = () => {
         latest reviews
       </div>
       <div className="w-3/4 my-8 mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        {reviews.slice(0, 3).map((review) => (
+        {reviews.slice(reviews.length - 3, reviews.length + 1).map((review) => (
           <HomeReviewsCard key={review._id} review={review} />
         ))}
       </div>
