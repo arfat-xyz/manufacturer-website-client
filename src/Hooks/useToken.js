@@ -11,11 +11,11 @@ const useToken = (user) => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email }),
         };
-        fetch(`http://localhost:5000/login/`, requestOptions)
+        fetch(`http://localhost:5000/login/${email}`, requestOptions)
           .then((response) => response.json())
           .then((data) => {
-            setToken(data.accessToken);
-            localStorage.setItem("accessToken", data.accessToken);
+            setToken(data.token);
+            localStorage.setItem("accessToken", data.token);
           });
       }
     };
