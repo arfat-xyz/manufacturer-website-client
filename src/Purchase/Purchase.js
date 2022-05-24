@@ -72,7 +72,7 @@ const Purchase = () => {
                   value={displayName}
                   class="input input-bordered w-full"
                   required
-                  {...register("user-name", { required: true })}
+                  {...register("user_name", { required: true })}
                 />
               </fieldset>
             </div>
@@ -100,7 +100,7 @@ const Purchase = () => {
                   value={data?.tool?.name}
                   class="input input-bordered w-full"
                   required
-                  {...register("product-name", { required: true })}
+                  {...register("product_name", { required: true })}
                 />
               </fieldset>
             </div>
