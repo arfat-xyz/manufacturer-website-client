@@ -11,7 +11,7 @@ const ManageProducts = () => {
       auth: `bearer ${localStorage.getItem("accessToken")}`,
     },
   };
-  const { isLoading, data } = useQuery("allorders", () =>
+  const { isLoading, refetch, data } = useQuery("allorders", () =>
     fetch(`http://localhost:5000/allproducts/`, requestOptions).then((res) =>
       res.json()
     )
@@ -31,11 +31,13 @@ const ManageProducts = () => {
               <th>Name</th>
               <th>Available</th>
               <th>Price</th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
             {data.map((product, index) => (
               <ManageProductROw
+                refetch={refetch}
                 key={product._id}
                 index={index}
                 product={product}

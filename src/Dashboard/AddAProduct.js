@@ -12,7 +12,6 @@ const AddAProduct = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = (e) => {
-    console.log(e);
     const requestOptions = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
@@ -23,7 +22,7 @@ const AddAProduct = () => {
       .then((data) => {
         if (data.insertedId) {
           toast.success("You've added a product");
-          navigate("dashboard/manageproducts");
+          navigate("/dashboard/manageproducts");
         }
       });
   };

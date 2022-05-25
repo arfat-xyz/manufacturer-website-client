@@ -7,7 +7,7 @@ import {
 import auth from "../firebase.init";
 import { async } from "@firebase/util";
 import Loading from "../Shared/Loading";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import useToken from "../Hooks/useToken";
 const Signup = () => {
   const navigate = useNavigate();
@@ -120,9 +120,16 @@ const Signup = () => {
             </label>
           </div>
           <div>
+            Already a user ?
+            <Link className="text-primary" to={"/login"}>
+              Login
+            </Link>
+          </div>
+
+          <div className="text-center">
             <input
               type="submit"
-              value="Submit"
+              value="Sign up"
               className="btn btn-secondary text-white"
             />
           </div>

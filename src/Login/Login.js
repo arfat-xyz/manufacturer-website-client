@@ -117,7 +117,7 @@ const Login = () => {
             <div>
               <input
                 type="submit"
-                value="Submit"
+                value="Login"
                 className="btn btn-secondary text-white"
               />
             </div>
