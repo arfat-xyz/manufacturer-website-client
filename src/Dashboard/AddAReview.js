@@ -9,7 +9,9 @@ import Loading from "../Shared/Loading";
 const AddAReview = () => {
   const [user, loading] = useAuthState(auth);
   const { isLoading, data } = useQuery("reviewtools", () =>
-    fetch("http://localhost:5000/hometools").then((res) => res.json())
+    fetch("https://floating-mountain-13716.herokuapp.com/hometools").then(
+      (res) => res.json()
+    )
   );
   const email = user?.email;
   const {
@@ -31,7 +33,10 @@ const AddAReview = () => {
       },
       body: JSON.stringify(e),
     };
-    fetch("http://localhost:5000/addareview", requestOptions)
+    fetch(
+      "https://floating-mountain-13716.herokuapp.com/addareview",
+      requestOptions
+    )
       .then((response) => response.json())
       .then((data) => {
         if (data?.insertedId) {

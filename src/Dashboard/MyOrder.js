@@ -8,9 +8,9 @@ import MyOrderRow from "./MyOrderRow";
 const MyOrder = () => {
   const [user, loading] = useAuthState(auth);
   const { isLoading, error, refetch, data } = useQuery("myorder", () =>
-    fetch(`http://localhost:5000/myorder/${user?.email}`).then((res) =>
-      res.json()
-    )
+    fetch(
+      `https://floating-mountain-13716.herokuapp.com/myorder/${user?.email}`
+    ).then((res) => res.json())
   );
   if (isLoading || loading) return <Loading />;
 

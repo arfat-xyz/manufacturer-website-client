@@ -21,7 +21,9 @@ const Purchase = () => {
     body: { email },
   }; */
   const { isLoading, data } = useQuery("purchase", () =>
-    fetch(`http://localhost:5000/purchase/${id}`).then((res) => res.json())
+    fetch(`https://floating-mountain-13716.herokuapp.com/purchase/${id}`).then(
+      (res) => res.json()
+    )
   );
   const {
     register,
@@ -32,6 +34,8 @@ const Purchase = () => {
   });
   const onSubmit = (e) => {
     e.status = "Not paid";
+    console.log(e);
+    e.price = data?.tool?.price * e?.quantity;
     const requestOptions = {
       method: "PUT",
       headers: {
@@ -40,10 +44,12 @@ const Purchase = () => {
       },
       body: JSON.stringify(e),
     };
-    fetch(`http://localhost:5000/purchase/${id}`, requestOptions)
+    fetch(
+      `https://floating-mountain-13716.herokuapp.com/purchase/${id}`,
+      requestOptions
+    )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
         if (data?.quantityUpdateResult?.modifiedCount > 0) {
           toast.success("Congress you buy a product");
           navigate("/dashboard/myorder");
@@ -208,7 +214,7 @@ const Purchase = () => {
               <input
                 type="submit"
                 className="mt-5 btn w-full btn-primary"
-                value="Purchase"
+                value="Add to Cart"
               />
             </div>
           </form>

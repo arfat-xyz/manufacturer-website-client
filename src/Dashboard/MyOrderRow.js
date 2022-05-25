@@ -4,13 +4,16 @@ import { toast } from "react-toastify";
 
 const MyOrderRow = ({ order, index, refetch }) => {
   const onCancel = (id) => {
-    fetch(`http://localhost:5000/myordercancel/${id}/${order.email}`, {
-      method: "DELETE",
-      headers: {
-        "Content-Type": "application/json",
-        auth: `bearer ${localStorage.getItem("accessToken")}`,
-      },
-    })
+    fetch(
+      `https://floating-mountain-13716.herokuapp.com/myordercancel/${id}/${order.email}`,
+      {
+        method: "DELETE",
+        headers: {
+          "Content-Type": "application/json",
+          auth: `bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    )
       .then((res) => res.json())
       .then((data) => {
         if (data?.result?.deletedCount > 0) {
@@ -29,12 +32,17 @@ const MyOrderRow = ({ order, index, refetch }) => {
       <td>{order.address}</td>
       <td className=" text-center">
         {order.status === "Not paid" && (
-          <Link className="btn btn-sm btn-secondary text-white" to="">
+          <Link
+            className="btn btn-sm btn-secondary text-white"
+            to={`/dashboard/buy/${order._id}`}
+          >
             Buy Now
           </Link>
         )}
         {order.status === "paid" && (
-          <span className="text-green-400">Paid</span>
+          <>
+            <span className="text-green-400">Paid</span>
+          </>
         )}
       </td>
       <td>

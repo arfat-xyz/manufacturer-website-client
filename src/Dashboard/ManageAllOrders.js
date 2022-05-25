@@ -18,7 +18,7 @@ const ManageAllOrders = () => {
   };
   const { isLoading, data } = useQuery("allorders", () =>
     fetch(
-      `http://localhost:5000/allorders/${user?.email}`,
+      `https://floating-mountain-13716.herokuapp.com/allorders/${user?.email}`,
       requestOptions
     ).then((res) => res.json())
   );

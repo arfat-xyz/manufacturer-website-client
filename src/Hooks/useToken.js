@@ -11,7 +11,10 @@ const useToken = (user) => {
           headers: { "Content-Type": "application/json" },
           body: JSON.stringify({ email }),
         };
-        fetch(`http://localhost:5000/login/${email}`, requestOptions)
+        fetch(
+          `https://floating-mountain-13716.herokuapp.com/login/${email}`,
+          requestOptions
+        )
           .then((response) => response.json())
           .then((data) => {
             setToken(data.token);

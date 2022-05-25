@@ -13,7 +13,10 @@ const useAdmin = (user) => {
           auth: `bearer ${localStorage.getItem("accessToken")}`,
         },
       };
-      fetch(`http://localhost:5000/admin/${user?.email}`, requestOptions)
+      fetch(
+        `https://floating-mountain-13716.herokuapp.com/admin/${user?.email}`,
+        requestOptions
+      )
         .then((response) => response.json())
         .then((data) => {
           setAdmin(data?.role);

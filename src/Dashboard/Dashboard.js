@@ -59,7 +59,7 @@ const Dashboard = () => {
             {admin === "admin" && (
               <span>
                 <li>
-                  <Link to="/dashboard/myorder">Make admin</Link>
+                  <Link to="/dashboard/makeaadmin">Make admin</Link>
                 </li>
                 <li>
                   <Link to="/dashboard/manageallorders">Manage All orders</Link>

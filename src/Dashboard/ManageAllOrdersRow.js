@@ -1,7 +1,6 @@
 import React from "react";
 
 const ManageAllOrdersRow = ({ order, index }) => {
-  console.log(order);
   const { user_name, email, status, address, number, product_name, quantity } =
     order;
   return (

@@ -8,13 +8,16 @@ import { toast } from "react-toastify";
 const MyProfile = () => {
   const [user, loading] = useAuthState(auth);
   const { isLoading, refetch, data } = useQuery("myorder", () =>
-    fetch(`http://localhost:5000/userupdate/${user?.email}`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-        auth: `bearer ${localStorage.getItem("accessToken")}`,
-      },
-    }).then((res) => res.json())
+    fetch(
+      `https://floating-mountain-13716.herokuapp.com/userupdate/${user?.email}`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+          auth: `bearer ${localStorage.getItem("accessToken")}`,
+        },
+      }
+    ).then((res) => res.json())
   );
   const {
     register,
@@ -32,7 +35,10 @@ const MyProfile = () => {
       },
       body: JSON.stringify(e),
     };
-    fetch(`http://localhost:5000/userupdate/`, requestOptions)
+    fetch(
+      `https://floating-mountain-13716.herokuapp.com/userupdate/`,
+      requestOptions
+    )
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

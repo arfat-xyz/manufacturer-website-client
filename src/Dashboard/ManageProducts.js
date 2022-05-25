@@ -12,9 +12,10 @@ const ManageProducts = () => {
     },
   };
   const { isLoading, refetch, data } = useQuery("allorders", () =>
-    fetch(`http://localhost:5000/allproducts/`, requestOptions).then((res) =>
-      res.json()
-    )
+    fetch(
+      `https://floating-mountain-13716.herokuapp.com/allproducts/`,
+      requestOptions
+    ).then((res) => res.json())
   );
   if (isLoading) {
     return <Loading />;

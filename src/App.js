@@ -18,6 +18,9 @@ import AddAProduct from "./Dashboard/AddAProduct";
 import ManageProducts from "./Dashboard/ManageProducts";
 import RequireAuth from "./Shared/RequireAuth";
 import Purchase from "./Purchase/Purchase";
+import Buy from "./Dashboard/Buy";
+import RequireAdmin from "./Shared/RequireAdmin";
+import MakeAdmin from "./Dashboard/MakeAdmin";
 function App() {
   return (
     <div>
@@ -48,9 +51,39 @@ function App() {
           <Route path="addareview" element={<AddAReview />} />
           <Route path="myprofile" element={<MyProfile />} />
           <Route index element={<MyProfile />} />
-          <Route path="manageallorders" element={<ManageAllOrders />} />
-          <Route path="addaproduct" element={<AddAProduct />} />
-          <Route path="manageproducts" element={<ManageProducts />} />
+          <Route
+            path="manageallorders"
+            element={
+              <RequireAdmin>
+                <ManageAllOrders />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="makeaadmin"
+            element={
+              <RequireAdmin>
+                <MakeAdmin />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="addaproduct"
+            element={
+              <RequireAdmin>
+                <AddAProduct />
+              </RequireAdmin>
+            }
+          />
+          <Route
+            path="manageproducts"
+            element={
+              <RequireAdmin>
+                <ManageProducts />
+              </RequireAdmin>
+            }
+          />
+          <Route path="buy/:id" element={<Buy />} />
         </Route>
         <Route path="/blog" element={<Blog />}></Route>
         <Route path="/myportfolio" element={<MyPortfolio />}></Route>

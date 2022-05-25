@@ -17,7 +17,10 @@ const AddAProduct = () => {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(e),
     };
-    fetch("http://localhost:5000/addaproduct", requestOptions)
+    fetch(
+      "https://floating-mountain-13716.herokuapp.com/addaproduct",
+      requestOptions
+    )
       .then((response) => response.json())
       .then((data) => {
         if (data.insertedId) {

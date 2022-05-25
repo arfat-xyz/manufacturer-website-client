@@ -5,7 +5,9 @@ import HomeReviewsCard from "./HomeReviewsCard";
 
 const HomeReviews = () => {
   const { isLoading, data: reviews } = useQuery("homeReviews", () =>
-    fetch("http://localhost:5000/homereviews").then((res) => res.json())
+    fetch("https://floating-mountain-13716.herokuapp.com/homereviews").then(
+      (res) => res.json()
+    )
   );
   if (isLoading) {
     return <Loading />;

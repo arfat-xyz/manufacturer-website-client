@@ -11,7 +11,7 @@ const ManageProductROw = ({ product, index, refetch }) => {
     const confirm = window.confirm(`Are you sure you want to delete ${name}`);
     if (confirm) {
       const email = user?.email;
-      const url = `http://localhost:5000/deleteproduct/${email}/${id}`;
+      const url = `https://floating-mountain-13716.herokuapp.com/deleteproduct/${email}/${id}`;
       fetch(url, {
         method: "DELETE",
         headers: {
