@@ -16,7 +16,7 @@ const Tools = () => {
         our products
       </div>
       <div className="w-3/4 mx-auto grid grid-cols-1 md:grid-cols-3 gap-8">
-        {tools.slice(0, 6).map((tool) => (
+        {tools.slice(tools.length - 6, tools.length + 1).map((tool) => (
           <HomeToolsCard key={tool._id} tool={tool} />
         ))}
       </div>

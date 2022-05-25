@@ -16,7 +16,6 @@ const MyProfile = () => {
       },
     }).then((res) => res.json())
   );
-  console.log(data);
   const {
     register,
     handleSubmit,
