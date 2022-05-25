@@ -27,19 +27,27 @@ const MyOrderRow = ({ order, index, refetch }) => {
       <td>{order.product_name}</td>
       <td>{order.quantity}</td>
       <td>{order.address}</td>
-      <td>
-        <Link className="btn btn-sm btn-secondary text-white" to="">
-          Buy Now
-        </Link>
+      <td className=" text-center">
+        {order.status === "Not paid" && (
+          <Link className="btn btn-sm btn-secondary text-white" to="">
+            Buy Now
+          </Link>
+        )}
+        {order.status === "paid" && (
+          <span className="text-green-400">Paid</span>
+        )}
       </td>
       <td>
-        <button
-          onClick={() => onCancel(order._id)}
-          className="btn btn-sm btn-secondary text-white"
-          to=""
-        >
-          cancel
-        </button>
+        {order.status === "paid" ? (
+          ""
+        ) : (
+          <button
+            onClick={() => onCancel(order._id)}
+            className="btn btn-sm btn-secondary text-white"
+          >
+            cancel
+          </button>
+        )}
       </td>
     </tr>
   );

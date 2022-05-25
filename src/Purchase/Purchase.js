@@ -31,6 +31,7 @@ const Purchase = () => {
     defaultValues: { quantity: 50 },
   });
   const onSubmit = (e) => {
+    e.status = "Not paid";
     const requestOptions = {
       method: "PUT",
       headers: {

@@ -11,7 +11,6 @@ const Dashboard = () => {
   if (loading || adminLoading) {
     return <Loading />;
   }
-  console.log("admin ", admin);
   return (
     <div>
       <div class="drawer drawer-mobile">
