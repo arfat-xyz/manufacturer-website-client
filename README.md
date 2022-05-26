@@ -1,8 +1,10 @@
-# Doctor's Chamber
+# Mobile Menufacturer
 
 ## [Live Link](https://mobile-manufacturer.web.app/)
 
-## [Code Link](https://github.com/programming-hero-web-course-4/independent-service-provider-arfat-beep)
+## [Client code](https://github.com/programming-hero-web-course1/manufacturer-website-client-side-arfat-beep)
+
+## [Server code](https://github.com/programming-hero-web-course1/manufacturer-website-server-side-arfat-beep)
 
 ## 5 features about this website
 
@@ -19,4 +21,4 @@
 2. React Toastify
 3. React
 4. React Firebase Hooks
-5. React Bootstrap
+5. Tailwind

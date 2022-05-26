@@ -81,7 +81,7 @@ const CheckoutForm = ({ order }) => {
         orderId: order?._id,
         transactionId,
       };
-      fetch(`http://localhost:5000/pay/${order?._id}`, {
+      fetch(`https://floating-mountain-13716.herokuapp.com/pay/${order?._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",

@@ -11,7 +11,7 @@ const ManageAllOrdersRow = ({ order, index, refetch }) => {
       `Are you sure you delivered ${product_name}`
     );
     if (confirm) {
-      const url = `http://localhost:5000/delivered/${id}`;
+      const url = `https://floating-mountain-13716.herokuapp.com/delivered/${id}`;
       fetch(url, {
         method: "POST",
         headers: {

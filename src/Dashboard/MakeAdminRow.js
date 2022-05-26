@@ -8,7 +8,7 @@ const MakeAdminRow = ({ index, user, refetch }) => {
     );
     if (confirm) {
       const email = user?.email;
-      const url = `http://localhost:5000/makeadmin/${id}`;
+      const url = `https://floating-mountain-13716.herokuapp.com/makeadmin/${id}`;
       fetch(url, {
         method: "POST",
         headers: {
