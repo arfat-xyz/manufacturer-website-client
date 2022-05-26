@@ -13,7 +13,7 @@ const HomeToolsCard = ({ tool }) => {
         <p>{desc}</p>
         <p>Available : {available}</p>
         <p>Minimum order : {minimum}</p>
-        <p>Price per : ${price}</p>
+        <p>Per unit price : ${price}</p>
         <div class="card-actions justify-center">
           <Link to={`purchase/${_id}`} class="btn btn-primary text-white">
             Buy Now

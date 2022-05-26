@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { useQuery } from "react-query";
@@ -11,6 +11,8 @@ const Purchase = () => {
   const navigate = useNavigate();
   const params = useParams();
   const id = params.id;
+  const [active, setActive] = useState(false);
+
   const [user, loading] = useAuthState(auth);
   /* const extra = {
     method: "GET",
@@ -34,7 +36,6 @@ const Purchase = () => {
   });
   const onSubmit = (e) => {
     e.status = "Not paid";
-    console.log(e);
     e.price = data?.tool?.price * e?.quantity;
     const requestOptions = {
       method: "PUT",
@@ -51,7 +52,7 @@ const Purchase = () => {
       .then((response) => response.json())
       .then((data) => {
         if (data?.quantityUpdateResult?.modifiedCount > 0) {
-          toast.success("Congress you buy a product");
+          toast.success("Congress you add a product to my order");
           navigate("/dashboard/myorder");
         }
       });
@@ -178,7 +179,7 @@ const Purchase = () => {
                 class="input input-bordered w-full"
                 {...register("quantity", {
                   min: {
-                    value: 50,
+                    value: data?.tool?.minimum,
                     message: "Minimum quantity must be 50",
                   },
                   max: {
@@ -190,6 +191,19 @@ const Purchase = () => {
                     message: "quantity is required",
                   },
                 })}
+                onChange={(e) => {
+                  const number = parseInt(e.target.value);
+                  const minimum = parseInt(data?.tool?.minimum);
+                  const available = parseInt(data?.tool?.available);
+                  if (number >= minimum && number <= available) {
+                    setActive(false);
+                  } else {
+                    setActive(true);
+                    toast.error(
+                      `minimum quantity is ${data.tool.minimum} and maximum quantity is ${data.tool.available} `
+                    );
+                  }
+                }}
               />
               <label class="label">
                 {errors.quantity?.type === "min" && (
@@ -212,8 +226,11 @@ const Purchase = () => {
 
             <div>
               <input
+                disabled={active}
                 type="submit"
-                className="mt-5 btn w-full btn-primary"
+                className={`mt-5 btn w-full   ${
+                  active ? "btn-primary" : "btn-secondary"
+                }`}
                 value="Add to Cart"
               />
             </div>

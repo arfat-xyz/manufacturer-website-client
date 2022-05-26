@@ -15,7 +15,7 @@ const BusinessSummary = () => {
   return (
     <div>
       <div className="text-2xl md:text-5xl uppercase text-primary font-bold text-center my-10">
-        Our success
+        business Summary
       </div>
       <div className="gap-8 md:m-8 grid grid-cols-1 md:grid-cols-3">
         <div className="flex items-center flex-col">

@@ -4,25 +4,30 @@ import { toast } from "react-toastify";
 
 const MyOrderRow = ({ order, index, refetch }) => {
   const onCancel = (id) => {
-    fetch(
-      `https://floating-mountain-13716.herokuapp.com/myordercancel/${id}/${order.email}`,
-      {
-        method: "DELETE",
-        headers: {
-          "Content-Type": "application/json",
-          auth: `bearer ${localStorage.getItem("accessToken")}`,
-        },
-      }
-    )
-      .then((res) => res.json())
-      .then((data) => {
-        if (data?.result?.deletedCount > 0) {
-          toast.success(
-            `You deleted ${order.product_name} form your order list`
-          );
-          refetch();
+    const confirm = window.confirm(
+      `you sure you want to cancel ${order.product_name}`
+    );
+    if (confirm) {
+      fetch(
+        `https://floating-mountain-13716.herokuapp.com/myordercancel/${id}/${order.email}`,
+        {
+          method: "DELETE",
+          headers: {
+            "Content-Type": "application/json",
+            auth: `bearer ${localStorage.getItem("accessToken")}`,
+          },
         }
-      });
+      )
+        .then((res) => res.json())
+        .then((data) => {
+          if (data?.result?.deletedCount > 0) {
+            toast.success(
+              `You deleted ${order.product_name} form your order list`
+            );
+            refetch();
+          }
+        });
+    }
   };
   return (
     <tr>
@@ -44,9 +49,14 @@ const MyOrderRow = ({ order, index, refetch }) => {
             <span className="text-green-400">Paid</span>
           </>
         )}
+        {order.status === "delivered" && (
+          <>
+            <span className="text-green-400">Product delivered</span>
+          </>
+        )}
       </td>
       <td>
-        {order.status === "paid" ? (
+        {order.status === "paid" || order.status === "delivered" ? (
           ""
         ) : (
           <button

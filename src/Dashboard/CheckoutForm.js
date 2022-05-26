@@ -1,9 +1,11 @@
 import { async } from "@firebase/util";
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js";
 import React, { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
 const CheckoutForm = ({ order }) => {
+  const navigate = useNavigate();
   const [clientSecret, setClientSecret] = useState("");
   const [cardError, setCardError] = useState("");
   const [success, setSuccess] = useState("");
@@ -74,13 +76,12 @@ const CheckoutForm = ({ order }) => {
     } else {
       setCardError("");
       setTransactionId(paymentIntent?.id);
-      console.log(transactionId);
       setSuccess("Congress! your payment is completed");
       const payment = {
         orderId: order?._id,
         transactionId,
       };
-      fetch(`https://floating-mountain-13716.herokuapp.com/pay/${order?._id}`, {
+      fetch(`http://localhost:5000/pay/${order?._id}`, {
         method: "PATCH",
         headers: {
           "Content-Type": "application/json",
@@ -90,7 +91,9 @@ const CheckoutForm = ({ order }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          console.log(data);
+          if (data.acknowledged) {
+            navigate("/dashboard/myorder");
+          }
           setProcessing(false);
         });
     }

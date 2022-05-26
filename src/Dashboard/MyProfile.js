@@ -54,7 +54,7 @@ const MyProfile = () => {
   return (
     <div>
       <div className="text-3xl text-secondary">My Profile</div>
-      <div className="my-8 w-96 grid items-center justify-center">
+      <div className="my-8 grid items-center justify-center">
         <div class="card w-full bg-base-100 shadow-xl">
           {/* <figure>
             <img
@@ -62,7 +62,7 @@ const MyProfile = () => {
               alt="Shoes"
             />
           </figure> */}
-          <div class="card-body">
+          <div class="card-body w-96">
             <div>
               <div>User name :{user?.displayName}</div>
               <div>User email :{user?.email}</div>
@@ -95,7 +95,7 @@ const MyProfile = () => {
                 )}
               </div>
             </div>
-            <form onSubmit={handleSubmit(onSubmit)} className=" m-8">
+            <form onSubmit={handleSubmit(onSubmit)} className="">
               <div class="form-control w-full">
                 <label class="label">
                   <span class="label-text">Your name</span>
