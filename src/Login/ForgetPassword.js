@@ -20,26 +20,30 @@ const ForgetPassword = () => {
   };
   return (
     <div>
-      <input type="checkbox" id="forget-password-modal" class="modal-toggle" />
-      <div class="modal modal-bottom sm:modal-middle">
-        <div class="modal-box">
+      <input
+        type="checkbox"
+        id="forget-password-modal"
+        className="modal-toggle"
+      />
+      <div className="modal modal-bottom sm:modal-middle">
+        <div className="modal-box">
           <div className="grid justify-end">
             <label
               for="forget-password-modal"
-              class="cursor-pointer shadow-md px-2 py-1 rounded-full"
+              className="cursor-pointer shadow-md px-2 py-1 rounded-full"
             >
               x
             </label>
           </div>
           <form onSubmit={handleSubmit(onSubmit)} className=" m-8">
-            <div class="form-control ">
-              <label class="label">
-                <span class="label-text">Email</span>
+            <div className="form-control ">
+              <label className="label">
+                <span className="label-text">Email</span>
               </label>
               <input
                 type="email"
                 placeholder="Type here"
-                class="input input-bordered"
+                className="input input-bordered"
                 {...register("email", {
                   required: {
                     value: true,
@@ -47,7 +51,7 @@ const ForgetPassword = () => {
                   },
                 })}
               />
-              <label class="label">
+              <label className="label">
                 {errors.email?.type === "required" && (
                   <span className="label-text-alt text-red-500">
                     {errors.email.message}
@@ -72,7 +76,7 @@ const ForgetPassword = () => {
             </div>
           </form>
 
-          <div class="modal-action"></div>
+          <div className="modal-action"></div>
         </div>
       </div>
     </div>

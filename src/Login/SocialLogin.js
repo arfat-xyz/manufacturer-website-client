@@ -18,7 +18,7 @@ const SocialLogin = () => {
     <div>
       {error && <span className="text-red-500">{error}</span>}
       {loading && <span>"Loading Please wait"</span>}
-      <div class="divider">OR</div>
+      <div className="divider">OR</div>
       <button
         onClick={() => {
           signInWithGoogle();

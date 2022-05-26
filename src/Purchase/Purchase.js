@@ -65,68 +65,68 @@ const Purchase = () => {
 
   return (
     <div className=" m-5 grid items-center justify-center">
-      <div class="card bg-base-100 shadow-xl">
+      <div className="card bg-base-100 shadow-xl">
         <figure className="w-96">
           <img className="w-full" src={data.tool.img} alt="Shoes" />
         </figure>
-        <div class="card-body">
+        <div className="card-body">
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div class="form-control w-full">
-              <label class="label">
-                <span class="label-text">Your name</span>
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Your name</span>
               </label>{" "}
               <fieldset disabled>
                 <input
                   type="text"
                   value={displayName}
-                  class="input input-bordered w-full"
+                  className="input input-bordered w-full"
                   required
                   {...register("user_name", { required: true })}
                 />
               </fieldset>
             </div>
-            <div class="form-control w-full">
-              <label class="label">
-                <span class="label-text">Your email</span>
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Your email</span>
               </label>{" "}
               <fieldset disabled>
                 <input
                   type="email"
                   value={email}
-                  class="input input-bordered w-full"
+                  className="input input-bordered w-full"
                   required
                   {...register("email", { required: true })}
                 />
               </fieldset>
             </div>
-            <div class="form-control w-full">
-              <label class="label">
-                <span class="label-text">Product name</span>
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Product name</span>
               </label>
               <fieldset disabled>
                 <input
                   type="text"
                   value={data?.tool?.name}
-                  class="input input-bordered w-full"
+                  className="input input-bordered w-full"
                   required
                   {...register("product_name", { required: true })}
                 />
               </fieldset>
             </div>
-            <div class="form-control w-full">
-              <label class="label">
-                <span class="label-text">Delivery address</span>
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Delivery address</span>
               </label>
               <input
                 type="text"
                 placeholder="Enter your address"
-                class="input input-bordered w-full"
+                className="input input-bordered w-full"
                 {...register("address", { required: true })}
               />
 
-              <label class="label">
+              <label className="label">
                 {errors.address && (
-                  <span class="label-text-alt text-red-500">
+                  <span className="label-text-alt text-red-500">
                     Address is required
                   </span>
                 )}
@@ -134,14 +134,14 @@ const Purchase = () => {
             </div>
 
             {/* this is for phone  */}
-            <div class="form-control w-full">
-              <label class="label">
-                <span class="label-text">Phone number</span>
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Phone number</span>
               </label>
               <input
                 type="number"
                 placeholder="Enter your phone number"
-                class="input input-bordered w-full"
+                className="input input-bordered w-full"
                 {...register("number", {
                   minLength: {
                     value: 11,
@@ -154,14 +154,14 @@ const Purchase = () => {
                 })}
               />
 
-              <label class="label">
+              <label className="label">
                 {errors.number?.type === "minLength" && (
-                  <span class="label-text-alt text-red-500">
+                  <span className="label-text-alt text-red-500">
                     {errors?.number?.message}
                   </span>
                 )}
                 {errors.number?.type === "required" && (
-                  <span class="label-text-alt text-red-500">
+                  <span className="label-text-alt text-red-500">
                     {errors?.number?.message}
                   </span>
                 )}
@@ -169,14 +169,14 @@ const Purchase = () => {
             </div>
 
             {/* this is for quantity  */}
-            <div class="form-control w-full">
-              <label class="label">
-                <span class="label-text">Product quantity</span>
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Product quantity</span>
               </label>
               <input
                 type="number"
                 placeholder="Enter your phone number"
-                class="input input-bordered w-full"
+                className="input input-bordered w-full"
                 {...register("quantity", {
                   min: {
                     value: data?.tool?.minimum,
@@ -205,19 +205,19 @@ const Purchase = () => {
                   }
                 }}
               />
-              <label class="label">
+              <label className="label">
                 {errors.quantity?.type === "min" && (
-                  <span class="label-text-alt text-red-500">
+                  <span className="label-text-alt text-red-500">
                     {errors?.quantity?.message}
                   </span>
                 )}{" "}
                 {errors.quantity?.type === "max" && (
-                  <span class="label-text-alt text-red-500">
+                  <span className="label-text-alt text-red-500">
                     {errors?.quantity?.message}
                   </span>
                 )}
                 {errors.quantity?.type === "required" && (
-                  <span class="label-text-alt text-red-500">
+                  <span className="label-text-alt text-red-500">
                     {errors?.quantity?.message}
                   </span>
                 )}

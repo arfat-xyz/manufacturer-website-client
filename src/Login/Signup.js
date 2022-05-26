@@ -39,14 +39,14 @@ const Signup = () => {
     <div className="grid justify-center items-center h-screen w-screen">
       <div className="shadow-lg w-96">
         <form onSubmit={handleSubmit(onSubmit)} className=" m-8">
-          <div class="form-control ">
-            <label class="label">
-              <span class="label-text">Name</span>
+          <div className="form-control ">
+            <label className="label">
+              <span className="label-text">Name</span>
             </label>
             <input
               type="text"
               placeholder="Type here"
-              class="input input-bordered"
+              className="input input-bordered"
               {...register("name", {
                 required: {
                   value: true,
@@ -54,7 +54,7 @@ const Signup = () => {
                 },
               })}
             />
-            <label class="label">
+            <label className="label">
               {errors.name?.type === "required" && (
                 <span className="label-text-alt text-red-500">
                   {errors.name.message}
@@ -63,14 +63,14 @@ const Signup = () => {
             </label>
           </div>
 
-          <div class="form-control ">
-            <label class="label">
-              <span class="label-text">Email</span>
+          <div className="form-control ">
+            <label className="label">
+              <span className="label-text">Email</span>
             </label>
             <input
               type="email"
               placeholder="Type here"
-              class="input input-bordered"
+              className="input input-bordered"
               {...register("email", {
                 required: {
                   value: true,
@@ -78,7 +78,7 @@ const Signup = () => {
                 },
               })}
             />
-            <label class="label">
+            <label className="label">
               {errors.email?.type === "required" && (
                 <span className="label-text-alt text-red-500">
                   {errors.email.message}
@@ -87,14 +87,14 @@ const Signup = () => {
             </label>
           </div>
 
-          <div class="form-control ">
-            <label class="label">
-              <span class="label-text">Passoword</span>
+          <div className="form-control ">
+            <label className="label">
+              <span className="label-text">Passoword</span>
             </label>
             <input
               type="password"
               placeholder="Type here"
-              class="input input-bordered"
+              className="input input-bordered"
               {...register("password", {
                 required: {
                   value: true,
@@ -106,7 +106,7 @@ const Signup = () => {
                 },
               })}
             />
-            <label class="label">
+            <label className="label">
               {errors.password?.type === "required" && (
                 <span className="label-text-alt text-red-500">
                   {errors.password.message}

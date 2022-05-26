@@ -5,20 +5,24 @@ const HomeReviewsCard = ({ review }) => {
   const stars = [];
   for (var i = 0; i < star; i++) {
     stars.push(
-      <img
-        className="pl-2"
-        src="https://laz-img-cdn.alicdn.com/tfs/TB14SXtAXOWBuNjy0FiXXXFxVXa-30-30.png"
-        alt=""
+      <input
+        key={i}
+        type="radio"
+        checked
+        readOnly
+        name="rating-3"
+        className="mask mask-star-2 bg-orange-400"
       />
     );
   }
   return (
-    <div class="card bg-base-100 shadow-xl">
-      <div class="card-body">
-        <h2 class="card-title text-primary">Product Name : {product}</h2>
+    <div className="card bg-base-100 shadow-xl">
+      <div className="card-body">
+        <h2 className="card-title text-primary">Product Name : {product}</h2>
         <p>Customer Name : {name}</p>
         <p>{comment}</p>
-        <div className="flex">
+
+        <div className="rating gap-1">
           Ratings :{" "}
           {stars.map((element) => {
             return element;

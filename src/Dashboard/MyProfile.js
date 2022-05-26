@@ -55,14 +55,14 @@ const MyProfile = () => {
     <div>
       <div className="text-3xl text-secondary">My Profile</div>
       <div className="my-8 grid items-center justify-center">
-        <div class="card w-full bg-base-100 shadow-xl">
+        <div className="card w-full bg-base-100 shadow-xl">
           {/* <figure>
             <img
               src="https://api.lorem.space/image/shoes?w=400&h=225"
               alt="Shoes"
             />
           </figure> */}
-          <div class="card-body w-96">
+          <div className="card-body w-96">
             <div>
               <div>User name :{user?.displayName}</div>
               <div>User email :{user?.email}</div>
@@ -96,44 +96,44 @@ const MyProfile = () => {
               </div>
             </div>
             <form onSubmit={handleSubmit(onSubmit)} className="">
-              <div class="form-control w-full">
-                <label class="label">
-                  <span class="label-text">Your name</span>
+              <div className="form-control w-full">
+                <label className="label">
+                  <span className="label-text">Your name</span>
                 </label>{" "}
                 <fieldset disabled>
                   <input
                     type="text"
                     value={user?.displayName}
-                    class="input input-bordered w-full"
+                    className="input input-bordered w-full"
                     required
                     {...register("user_name", { required: true })}
                   />
                 </fieldset>
               </div>
 
-              <div class="form-control w-full">
-                <label class="label">
-                  <span class="label-text">Your email</span>
+              <div className="form-control w-full">
+                <label className="label">
+                  <span className="label-text">Your email</span>
                 </label>{" "}
                 <fieldset disabled>
                   <input
                     type="email"
                     value={user?.email}
-                    class="input input-bordered w-full"
+                    className="input input-bordered w-full"
                     required
                     {...register("email", { required: true })}
                   />
                 </fieldset>
               </div>
 
-              <div class="form-control ">
-                <label class="label">
-                  <span class="label-text">Education</span>
+              <div className="form-control ">
+                <label className="label">
+                  <span className="label-text">Education</span>
                 </label>
                 <input
                   type="text"
                   placeholder="Type here"
-                  class="input input-bordered"
+                  className="input input-bordered"
                   {...register("education", {
                     required: {
                       value: true,
@@ -141,7 +141,7 @@ const MyProfile = () => {
                     },
                   })}
                 />
-                <label class="label">
+                <label className="label">
                   {errors.education?.type === "required" && (
                     <span className="label-text-alt text-red-500">
                       {errors.education.message}
@@ -150,14 +150,14 @@ const MyProfile = () => {
                 </label>
               </div>
 
-              <div class="form-control ">
-                <label class="label">
-                  <span class="label-text">Location</span>
+              <div className="form-control ">
+                <label className="label">
+                  <span className="label-text">Location</span>
                 </label>
                 <input
                   type="text"
                   placeholder="Type here"
-                  class="input input-bordered"
+                  className="input input-bordered"
                   {...register("location", {
                     required: {
                       value: true,
@@ -165,7 +165,7 @@ const MyProfile = () => {
                     },
                   })}
                 />
-                <label class="label">
+                <label className="label">
                   {errors.location?.type === "required" && (
                     <span className="label-text-alt text-red-500">
                       {errors.location.message}
@@ -174,14 +174,14 @@ const MyProfile = () => {
                 </label>
               </div>
 
-              <div class="form-control ">
-                <label class="label">
-                  <span class="label-text">Phone</span>
+              <div className="form-control ">
+                <label className="label">
+                  <span className="label-text">Phone</span>
                 </label>
                 <input
                   type="number"
                   placeholder="Type here"
-                  class="input input-bordered"
+                  className="input input-bordered"
                   {...register("phone", {
                     required: {
                       value: true,
@@ -193,28 +193,28 @@ const MyProfile = () => {
                     },
                   })}
                 />
-                <label class="label">
+                <label className="label">
                   {errors.phone?.type === "required" && (
                     <span className="label-text-alt text-red-500">
                       {errors.phone.message}
                     </span>
                   )}
                   {errors.phone?.type === "minLength" && (
-                    <span class="label-text-alt text-red-500">
+                    <span className="label-text-alt text-red-500">
                       {errors?.phone?.message}
                     </span>
                   )}
                 </label>
               </div>
 
-              <div class="form-control ">
-                <label class="label">
-                  <span class="label-text">LinkedIn</span>
+              <div className="form-control ">
+                <label className="label">
+                  <span className="label-text">LinkedIn</span>
                 </label>
                 <input
                   type="text"
                   placeholder="Type here"
-                  class="input input-bordered"
+                  className="input input-bordered"
                   {...register("linkedin", {
                     required: {
                       value: true,
@@ -222,7 +222,7 @@ const MyProfile = () => {
                     },
                   })}
                 />
-                <label class="label">
+                <label className="label">
                   {errors.linkedin?.type === "required" && (
                     <span className="label-text-alt text-red-500">
                       {errors.linkedin.message}

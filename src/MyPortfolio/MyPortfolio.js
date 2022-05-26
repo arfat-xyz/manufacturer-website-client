@@ -4,11 +4,11 @@ import { Link } from "react-router-dom";
 const MyPortfolio = () => {
   return (
     <div className="grid items-center justify-center my-8">
-      <div class="card bg-base-100 shadow-xl">
-        <div class="card-body">
+      <div className="card bg-base-100 shadow-xl">
+        <div className="card-body">
           <div className="grid items-center justify-center md:grid-cols-2">
-            <div class="avatar justify-center">
-              <div class="w-2/3 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+            <div className="avatar justify-center">
+              <div className="w-2/3 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
                 <img
                   className="w-100 bg-primary"
                   src="https://arfat.xyz/img/arfat-rahman-no-bg-img.png"

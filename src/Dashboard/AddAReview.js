@@ -48,16 +48,16 @@ const AddAReview = () => {
   return (
     <div>
       <div className="text-4xl text-secondary">Add a review</div>
-      <div class="card w-96 bg-base-100 shadow-xl">
-        <div class="card-body">
+      <div className="card w-96 bg-base-100 shadow-xl">
+        <div className="card-body">
           <form onSubmit={handleSubmit(onSubmit)} className=" m-8">
-            <div class="form-control ">
-              <label class="label">
-                <span class="label-text">Procuct name</span>
+            <div className="form-control ">
+              <label className="label">
+                <span className="label-text">Procuct name</span>
               </label>
 
               <select
-                class="select select-bordered w-full max-w-xs"
+                className="select select-bordered w-full max-w-xs"
                 {...register("name", {
                   required: {
                     value: true,
@@ -69,7 +69,7 @@ const AddAReview = () => {
                   <option>{tool.name}</option>
                 ))}
               </select>
-              <label class="label">
+              <label className="label">
                 {errors.name?.type === "required" && (
                   <span className="label-text-alt text-red-500">
                     {errors.name.message}
@@ -78,24 +78,24 @@ const AddAReview = () => {
               </label>
             </div>
 
-            <div class="form-control w-full">
-              <label class="label">
-                <span class="label-text">Your email</span>
+            <div className="form-control w-full">
+              <label className="label">
+                <span className="label-text">Your email</span>
               </label>{" "}
               <fieldset disabled>
                 <input
                   type="email"
                   value={email}
-                  class="input input-bordered w-full"
+                  className="input input-bordered w-full"
                   required
                   {...register("email", { required: true })}
                 />
               </fieldset>
             </div>
 
-            <div class="form-control ">
-              <label class="label">
-                <span class="label-text">Comment</span>
+            <div className="form-control ">
+              <label className="label">
+                <span className="label-text">Comment</span>
               </label>
               <textarea
                 {...register("comment", {
@@ -105,11 +105,11 @@ const AddAReview = () => {
                   },
                 })}
                 name="comment"
-                class="textarea textarea-bordered h-24"
+                className="textarea textarea-bordered h-24"
                 id=""
               ></textarea>
 
-              <label class="label">
+              <label className="label">
                 {errors.comment?.type === "required" && (
                   <span className="label-text-alt text-red-500">
                     {errors.comment.message}
@@ -118,14 +118,14 @@ const AddAReview = () => {
               </label>
             </div>
 
-            <div class="form-control ">
-              <label class="label">
-                <span class="label-text">Ratings</span>
+            <div className="form-control ">
+              <label className="label">
+                <span className="label-text">Ratings</span>
               </label>
               <input
                 type="number"
                 placeholder="Type here"
-                class="input input-bordered"
+                className="input input-bordered"
                 {...register("star", {
                   required: {
                     value: true,
@@ -141,7 +141,7 @@ const AddAReview = () => {
                   },
                 })}
               />
-              <label class="label">
+              <label className="label">
                 {errors.star?.type === "required" && (
                   <span className="label-text-alt text-red-500">
                     {errors.star.message}

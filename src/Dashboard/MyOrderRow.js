@@ -51,7 +51,7 @@ const MyOrderRow = ({ order, index, refetch }) => {
         )}
         {order.status === "delivered" && (
           <>
-            <span className="text-green-400">Product delivered</span>
+            <span className="text-green-400">Shipped</span>
           </>
         )}
       </td>

@@ -35,14 +35,14 @@ const Login = () => {
     <div className="grid justify-center items-center h-screen w-screen">
       <div className="shadow-lg w-96 rounded-lg p-5">
         <form onSubmit={handleSubmit(onSubmit)} className=" m-8">
-          <div class="form-control ">
-            <label class="label">
-              <span class="label-text">Email</span>
+          <div className="form-control ">
+            <label className="label">
+              <span className="label-text">Email</span>
             </label>
             <input
               type="email"
               placeholder="Type here"
-              class="input input-bordered"
+              className="input input-bordered"
               {...register("email", {
                 required: {
                   value: true,
@@ -50,7 +50,7 @@ const Login = () => {
                 },
               })}
             />
-            <label class="label">
+            <label className="label">
               {errors.email?.type === "required" && (
                 <span className="label-text-alt text-red-500">
                   {errors.email.message}
@@ -59,14 +59,14 @@ const Login = () => {
             </label>
           </div>
 
-          <div class="form-control ">
-            <label class="label">
-              <span class="label-text">Passoword</span>
+          <div className="form-control ">
+            <label className="label">
+              <span className="label-text">Passoword</span>
             </label>
             <input
               type="password"
               placeholder="Type here"
-              class="input input-bordered"
+              className="input input-bordered"
               {...register("password", {
                 required: {
                   value: true,
@@ -78,7 +78,7 @@ const Login = () => {
                 },
               })}
             />
-            <label class="label">
+            <label className="label">
               {errors.password?.type === "required" && (
                 <span className="label-text-alt text-red-500">
                   {errors.password.message}
@@ -95,7 +95,7 @@ const Login = () => {
             Forget password ?
             <label
               for="forget-password-modal"
-              class="text-red-700 cursor-pointer"
+              className="text-red-700 cursor-pointer"
             >
               Click here
             </label>

@@ -55,7 +55,7 @@ const ManageAllOrdersRow = ({ order, index, refetch }) => {
           </button>
         )}
         {status === "delivered" && (
-          <span className="text-success">delivered</span>
+          <span className="text-success">Shipped</span>
         )}
       </td>
     </tr>

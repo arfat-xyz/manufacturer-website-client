@@ -23,8 +23,8 @@ const ManageProducts = () => {
   return (
     <div>
       <div className="text-3xl text-secondary">Manage All Orders</div>
-      <div class="overflow-x-auto">
-        <table class="table w-full">
+      <div className="overflow-x-auto">
+        <table className="table w-full">
           <thead>
             <tr>
               <th></th>

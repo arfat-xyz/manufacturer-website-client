@@ -21,10 +21,8 @@ const ManageProductROw = ({ product, index, refetch }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          if (data.result.deletedCount > 0) {
-            toast.success("You've deleted a product");
-            refetch();
-          }
+          toast.success("You've deleted a product");
+          refetch();
         });
     }
   };
@@ -35,8 +33,8 @@ const ManageProductROw = ({ product, index, refetch }) => {
     <tr>
       <th>{index + 1}</th>
       <td>
-        <div class="avatar">
-          <div class="w-20 rounded">
+        <div className="avatar">
+          <div className="w-20 rounded">
             <img src={img} alt={_id} />
           </div>
         </div>

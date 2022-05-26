@@ -33,17 +33,17 @@ const AddAProduct = () => {
     <div>
       <div className="text-3xl text-secondary">Add a product</div>
       <div className="grid justify-center items-center">
-        <div class="card w-96 bg-base-100 shadow-xl">
-          <div class="card-body">
+        <div className="card w-96 bg-base-100 shadow-xl">
+          <div className="card-body">
             <form onSubmit={handleSubmit(onSubmit)} className=" m-8">
-              <div class="form-control ">
-                <label class="label">
-                  <span class="label-text">Name</span>
+              <div className="form-control ">
+                <label className="label">
+                  <span className="label-text">Name</span>
                 </label>
                 <input
                   type="text"
                   placeholder="Type here"
-                  class="input input-bordered"
+                  className="input input-bordered"
                   {...register("name", {
                     required: {
                       value: true,
@@ -51,7 +51,7 @@ const AddAProduct = () => {
                     },
                   })}
                 />
-                <label class="label">
+                <label className="label">
                   {errors.name?.type === "required" && (
                     <span className="label-text-alt text-red-500">
                       {errors.name.message}
@@ -60,9 +60,9 @@ const AddAProduct = () => {
                 </label>
               </div>
 
-              <div class="form-control ">
-                <label class="label">
-                  <span class="label-text">Description</span>
+              <div className="form-control ">
+                <label className="label">
+                  <span className="label-text">Description</span>
                 </label>
                 <textarea
                   {...register("desc", {
@@ -72,11 +72,11 @@ const AddAProduct = () => {
                     },
                   })}
                   name="desc"
-                  class="textarea textarea-bordered h-24"
+                  className="textarea textarea-bordered h-24"
                   id=""
                 ></textarea>
 
-                <label class="label">
+                <label className="label">
                   {errors.desc?.type === "required" && (
                     <span className="label-text-alt text-red-500">
                       {errors.desc.message}
@@ -85,14 +85,14 @@ const AddAProduct = () => {
                 </label>
               </div>
 
-              <div class="form-control ">
-                <label class="label">
-                  <span class="label-text">Available</span>
+              <div className="form-control ">
+                <label className="label">
+                  <span className="label-text">Available</span>
                 </label>
                 <input
                   type="number"
                   placeholder="Type here"
-                  class="input input-bordered"
+                  className="input input-bordered"
                   {...register("available", {
                     required: {
                       value: true,
@@ -100,7 +100,7 @@ const AddAProduct = () => {
                     },
                   })}
                 />
-                <label class="label">
+                <label className="label">
                   {errors.available?.type === "required" && (
                     <span className="label-text-alt text-red-500">
                       {errors.available.message}
@@ -108,14 +108,14 @@ const AddAProduct = () => {
                   )}
                 </label>
               </div>
-              <div class="form-control ">
-                <label class="label">
-                  <span class="label-text">Minimum order</span>
+              <div className="form-control ">
+                <label className="label">
+                  <span className="label-text">Minimum order</span>
                 </label>
                 <input
                   type="number"
                   placeholder="Type here"
-                  class="input input-bordered"
+                  className="input input-bordered"
                   {...register("minimum", {
                     required: {
                       value: true,
@@ -123,7 +123,7 @@ const AddAProduct = () => {
                     },
                   })}
                 />
-                <label class="label">
+                <label className="label">
                   {errors.minimum?.type === "required" && (
                     <span className="label-text-alt text-red-500">
                       {errors.minimum.message}
@@ -131,14 +131,14 @@ const AddAProduct = () => {
                   )}
                 </label>
               </div>
-              <div class="form-control ">
-                <label class="label">
-                  <span class="label-text">Price per pice</span>
+              <div className="form-control ">
+                <label className="label">
+                  <span className="label-text">Price per pice</span>
                 </label>
                 <input
                   type="number"
                   placeholder="Type here"
-                  class="input input-bordered"
+                  className="input input-bordered"
                   {...register("price", {
                     required: {
                       value: true,
@@ -146,7 +146,7 @@ const AddAProduct = () => {
                     },
                   })}
                 />
-                <label class="label">
+                <label className="label">
                   {errors.price?.type === "required" && (
                     <span className="label-text-alt text-red-500">
                       {errors.price.message}
@@ -154,14 +154,14 @@ const AddAProduct = () => {
                   )}
                 </label>
               </div>
-              <div class="form-control ">
-                <label class="label">
-                  <span class="label-text">Image URL</span>
+              <div className="form-control ">
+                <label className="label">
+                  <span className="label-text">Image URL</span>
                 </label>
                 <input
                   type="text"
                   placeholder="Type here"
-                  class="input input-bordered"
+                  className="input input-bordered"
                   {...register("img", {
                     required: {
                       value: true,
@@ -169,7 +169,7 @@ const AddAProduct = () => {
                     },
                   })}
                 />
-                <label class="label">
+                <label className="label">
                   {errors.img?.type === "required" && (
                     <span className="label-text-alt text-red-500">
                       {errors.img.message}
