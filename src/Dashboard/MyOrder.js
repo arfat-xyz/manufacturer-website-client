@@ -9,7 +9,7 @@ const MyOrder = () => {
   const [user, loading] = useAuthState(auth);
   const { isLoading, error, refetch, data } = useQuery("myorder", () =>
     fetch(
-      `https://floating-mountain-13716.herokuapp.com/myorder/${user?.email}`
+      `https://mobile-manufacturer-server.onrender.com/myorder/${user?.email}`
     ).then((res) => res.json())
   );
   if (isLoading || loading) return <Loading />;

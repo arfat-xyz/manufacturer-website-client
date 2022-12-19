@@ -5,7 +5,7 @@ import HomeToolsCard from "./HomeToolsCard";
 
 const Tools = () => {
   const { isLoading, data: tools } = useQuery("homeTools", () =>
-    fetch("https://floating-mountain-13716.herokuapp.com/hometools").then(
+    fetch("https://mobile-manufacturer-server.onrender.com/hometools").then(
       (res) => res.json()
     )
   );

@@ -9,7 +9,7 @@ const MakeAdmin = () => {
     refetch,
     data: users,
   } = useQuery("makeadmin", () =>
-    fetch("https://floating-mountain-13716.herokuapp.com/allusers", {
+    fetch("https://mobile-manufacturer-server.onrender.com/allusers", {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

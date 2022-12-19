@@ -13,7 +13,7 @@ const ManageProducts = () => {
   };
   const { isLoading, refetch, data } = useQuery("allorders", () =>
     fetch(
-      `https://floating-mountain-13716.herokuapp.com/allproducts/`,
+      `https://mobile-manufacturer-server.onrender.com/allproducts/`,
       requestOptions
     ).then((res) => res.json())
   );

@@ -1,6 +1,6 @@
 import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
-import React, { useState } from "react";
+import React from "react";
 import { useQuery } from "react-query";
 import { useParams } from "react-router-dom";
 import Loading from "../Shared/Loading";
@@ -12,7 +12,7 @@ const stripePromise = loadStripe(
 const Buy = () => {
   const params = useParams();
   const id = params.id;
-  const url = `https://floating-mountain-13716.herokuapp.com/pay/${id}`;
+  const url = `https://mobile-manufacturer-server.onrender.com/pay/${id}`;
   const { isLoading, data: order } = useQuery(["buyorder", id], () =>
     fetch(url, {
       method: "GET",

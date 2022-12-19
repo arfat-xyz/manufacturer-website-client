@@ -9,7 +9,7 @@ const MyOrderRow = ({ order, index, refetch }) => {
     );
     if (confirm) {
       fetch(
-        `https://floating-mountain-13716.herokuapp.com/myordercancel/${id}/${order.email}`,
+        `https://mobile-manufacturer-server.onrender.com/myordercancel/${id}/${order.email}`,
         {
           method: "DELETE",
           headers: {

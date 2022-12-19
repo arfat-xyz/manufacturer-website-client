@@ -9,7 +9,7 @@ import Loading from "../Shared/Loading";
 const AddAReview = () => {
   const [user, loading] = useAuthState(auth);
   const { isLoading, data } = useQuery("reviewtools", () =>
-    fetch("https://floating-mountain-13716.herokuapp.com/hometools").then(
+    fetch("https://mobile-manufacturer-server.onrender.com/hometools").then(
       (res) => res.json()
     )
   );
@@ -34,7 +34,7 @@ const AddAReview = () => {
       body: JSON.stringify(e),
     };
     fetch(
-      "https://floating-mountain-13716.herokuapp.com/addareview",
+      "https://mobile-manufacturer-server.onrender.com/addareview",
       requestOptions
     )
       .then((response) => response.json())

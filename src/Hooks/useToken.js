@@ -12,7 +12,7 @@ const useToken = (user) => {
           body: JSON.stringify({ email }),
         };
         fetch(
-          `https://floating-mountain-13716.herokuapp.com/login/${email}`,
+          `https://mobile-manufacturer-server.onrender.com/login/${email}`,
           requestOptions
         )
           .then((response) => response.json())

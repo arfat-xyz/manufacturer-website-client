@@ -8,7 +8,7 @@ const MakeAdminRow = ({ index, user, refetch }) => {
     );
     if (confirm) {
       const email = user?.email;
-      const url = `https://floating-mountain-13716.herokuapp.com/makeadmin/${id}`;
+      const url = `https://mobile-manufacturer-server.onrender.com/makeadmin/${id}`;
       fetch(url, {
         method: "POST",
         headers: {
@@ -18,10 +18,8 @@ const MakeAdminRow = ({ index, user, refetch }) => {
       })
         .then((res) => res.json())
         .then((data) => {
-          if (data.modifiedCount > 0) {
-            toast.success(`You make ${email} an admin`);
-            refetch();
-          }
+          toast.success(`You make ${email} an admin`);
+          refetch();
         });
     }
   };

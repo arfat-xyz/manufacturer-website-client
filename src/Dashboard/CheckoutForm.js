@@ -19,7 +19,7 @@ const CheckoutForm = ({ order }) => {
   useEffect(() => {
     // Create PaymentIntent as soon as the page loads
     fetch(
-      "https://floating-mountain-13716.herokuapp.com/create-payment-intent",
+      "https://mobile-manufacturer-server.onrender.com/create-payment-intent",
       {
         method: "POST",
         headers: {
@@ -81,14 +81,17 @@ const CheckoutForm = ({ order }) => {
         orderId: order?._id,
         transactionId,
       };
-      fetch(`https://floating-mountain-13716.herokuapp.com/pay/${order?._id}`, {
-        method: "PATCH",
-        headers: {
-          "Content-Type": "application/json",
-          auth: `bearer ${localStorage.getItem("accessToken")}`,
-        },
-        body: JSON.stringify(payment),
-      })
+      fetch(
+        `https://mobile-manufacturer-server.onrender.com/pay/${order?._id}`,
+        {
+          method: "PATCH",
+          headers: {
+            "Content-Type": "application/json",
+            auth: `bearer ${localStorage.getItem("accessToken")}`,
+          },
+          body: JSON.stringify(payment),
+        }
+      )
         .then((res) => res.json())
         .then((data) => {
           if (data.acknowledged) {

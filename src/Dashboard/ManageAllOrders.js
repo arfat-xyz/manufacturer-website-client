@@ -18,7 +18,7 @@ const ManageAllOrders = () => {
   };
   const { isLoading, data } = useQuery("allorders", () =>
     fetch(
-      `https://floating-mountain-13716.herokuapp.com/allorders/${user?.email}`,
+      `https://mobile-manufacturer-server.onrender.com/allorders/${user?.email}`,
       requestOptions
     ).then((res) => res.json())
   );

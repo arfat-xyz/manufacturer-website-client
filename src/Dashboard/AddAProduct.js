@@ -18,7 +18,7 @@ const AddAProduct = () => {
       body: JSON.stringify(e),
     };
     fetch(
-      "https://floating-mountain-13716.herokuapp.com/addaproduct",
+      "https://mobile-manufacturer-server.onrender.com/addaproduct",
       requestOptions
     )
       .then((response) => response.json())

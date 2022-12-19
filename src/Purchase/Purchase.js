@@ -23,9 +23,9 @@ const Purchase = () => {
     body: { email },
   }; */
   const { isLoading, data } = useQuery("purchase", () =>
-    fetch(`https://floating-mountain-13716.herokuapp.com/purchase/${id}`).then(
-      (res) => res.json()
-    )
+    fetch(
+      `https://mobile-manufacturer-server.onrender.com/purchase/${id}`
+    ).then((res) => res.json())
   );
   const {
     register,
@@ -46,7 +46,7 @@ const Purchase = () => {
       body: JSON.stringify(e),
     };
     fetch(
-      `https://floating-mountain-13716.herokuapp.com/purchase/${id}`,
+      `https://mobile-manufacturer-server.onrender.com/purchase/${id}`,
       requestOptions
     )
       .then((response) => response.json())

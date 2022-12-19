@@ -14,7 +14,7 @@ const useAdmin = (user) => {
         },
       };
       fetch(
-        `https://floating-mountain-13716.herokuapp.com/admin/${user?.email}`,
+        `https://mobile-manufacturer-server.onrender.com/admin/${user?.email}`,
         requestOptions
       )
         .then((response) => response.json())

@@ -9,7 +9,7 @@ const MyProfile = () => {
   const [user, loading] = useAuthState(auth);
   const { isLoading, refetch, data } = useQuery("myorder", () =>
     fetch(
-      `https://floating-mountain-13716.herokuapp.com/userupdate/${user?.email}`,
+      `https://mobile-manufacturer-server.onrender.com/userupdate/${user?.email}`,
       {
         method: "GET",
         headers: {
@@ -36,7 +36,7 @@ const MyProfile = () => {
       body: JSON.stringify(e),
     };
     fetch(
-      `https://floating-mountain-13716.herokuapp.com/userupdate/`,
+      `https://mobile-manufacturer-server.onrender.com/userupdate/`,
       requestOptions
     )
       .then((response) => response.json())
